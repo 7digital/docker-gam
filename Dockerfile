@@ -20,4 +20,4 @@ RUN cd /opt/gam/src && \
 	pip3 install -r requirements.txt
 
 WORKDIR /root
-ENTRYPOINT ["/bin/bash", "-c", "/opt/bin/gam"]
+ENTRYPOINT ["/opt/bin/gam"]
