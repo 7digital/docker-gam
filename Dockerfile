@@ -16,5 +16,8 @@ RUN mkdir -p /opt/bin \
     && ln -s /opt/gam/src/gam.py /opt/bin/gam \
     && touch /opt/gam/src/{nobrowser.txt,noupdatecheck.txt}
 
+RUN cd /opt/gam/src && \
+	pip3 install -r requirements.txt
+
 WORKDIR /root
 ENTRYPOINT ["/bin/bash"]
