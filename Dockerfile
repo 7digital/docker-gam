@@ -14,7 +14,8 @@ RUN apk add --update --no-cache bash curl git python3 py3-cryptography py-openss
 RUN mkdir -p /opt/bin \
     && git clone --branch ${SOURCE_TAG} ${SOURCE_URL} /opt/gam \
     && ln -s /opt/gam/src/gam.py /opt/bin/gam \
-    && touch /opt/gam/src/{nobrowser.txt,noupdatecheck.txt}
+    && touch /opt/gam/src/nobrowser.txt \
+	&& touch /opt/gam/src/noupdatecheck.txt
 
 RUN cd /opt/gam/src && \
 	pip3 install -r requirements.txt
